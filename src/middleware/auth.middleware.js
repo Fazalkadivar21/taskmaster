@@ -12,7 +12,7 @@ export const varifyToken = async (req, res, next) => {
         message: "Token not found",
       });
     }
-    const decodedToken = jwt.varify(token, process.env.ACCESS_TOKEN_SECRATE);
+    const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRATE);
 
     const User = await user
       .findById(decodedToken?._id)

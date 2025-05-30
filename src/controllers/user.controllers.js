@@ -92,6 +92,7 @@ const loginHandler = async (req, res) => {
       })
       .json({
         message: "Login successfull",
+        userId:User._id
       });
   } catch (error) {
     return res.status(500).json({
